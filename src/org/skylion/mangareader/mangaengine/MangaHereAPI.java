@@ -22,9 +22,8 @@ import org.skylion.mangareader.util.StringUtil;
  * 
  * @author Skylion (Aaron Gokaslan)
  */
-public class MangaHereAPI implements MangaEngine{
-
-
+public class MangaHereAPI extends MangaEngine {
+	
 	private String currentURL;//Saves the current URL for future looksUps
 
 	private final static String MANGA_HERE_URL = "http://www.mangahere.com/manga/";

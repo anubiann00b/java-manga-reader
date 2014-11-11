@@ -18,7 +18,7 @@ import org.skylion.mangareader.util.StringUtil;
  * An unofficial API of MangaReader written by the developers of this program.
  * @author Aaron Gokaslan
  */
-public class MangaReaderAPI implements MangaEngine{
+public class MangaReaderAPI extends MangaEngine{
 
 	/**
 	 * Current URL for future look ups

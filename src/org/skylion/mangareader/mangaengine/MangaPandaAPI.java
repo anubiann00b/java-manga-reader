@@ -18,8 +18,8 @@ import org.skylion.mangareader.util.StringUtil;
  * An unofficial API of MangaPanda written by the developers of this program.
  * @author Aaron Gokaslan
  */
-public class MangaPandaAPI implements MangaEngine{
-
+public class MangaPandaAPI extends MangaEngine{
+	
 	/**
 	 * Current URL for future look ups
 	 */

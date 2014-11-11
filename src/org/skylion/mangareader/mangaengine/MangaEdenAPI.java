@@ -25,7 +25,7 @@ import org.skylion.mangareader.util.StringUtil;
  * @author Skylion
  *
  */
-public class MangaEdenAPI implements MangaEngine{
+public class MangaEdenAPI extends MangaEngine{
 
 	private final static String[][] mangaList = initializeMangaList();//This takes a while to populate;
 	private String[] chapterURLs;

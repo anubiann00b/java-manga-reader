@@ -2,6 +2,10 @@ package org.skylion.mangareader.mangaengine;
 
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.ObjectStreamException;
+import java.io.Serializable;
 import java.util.List;
 
 
@@ -10,28 +14,40 @@ import java.util.List;
  * @author Skylion
  *
  */
-public interface MangaEngine {
+public abstract class MangaEngine implements Serializable {
 
-	public String getCurrentURL();
-	public void setCurrentURL(String url);
-	public BufferedImage loadImg(String url) throws IOException;
-	public BufferedImage getImage(String url) throws IOException;
+	public abstract String getCurrentURL();
+	public abstract void setCurrentURL(String url);
+	public abstract BufferedImage loadImg(String url) throws IOException;
+	public abstract BufferedImage getImage(String url) throws IOException;
 	
-	public String getNextPage();
-	public String getPreviousPage();
+	public abstract String getNextPage();
+	public abstract String getPreviousPage();
 	
-	public boolean isValidPage(String url);
+	public abstract boolean isValidPage(String url);
 	
-	public List<String> getMangaList();
+	public abstract List<String> getMangaList();
 	
-	public String getMangaName();
+	public abstract String getMangaName();
 	
-	public String[] getChapterList();
-	public String[] getPageList();
-	public String[] getChapterNames();
+	public abstract String[] getChapterList();
+	public abstract String[] getPageList();
+	public abstract String[] getChapterNames();
 	
-	public String getMangaURL(String mangaName);
+	public abstract String getMangaURL(String mangaName);
 	
-	public int getCurrentPageNum();
-	public int getCurrentChapNum();
+	public abstract int getCurrentPageNum();
+	public abstract int getCurrentChapNum();
+	
+	private void writeObject(ObjectOutputStream out) throws IOException {
+		
+	}
+	
+	private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
+		
+	}
+	
+	private void readObjectNoData() throws ObjectStreamException {
+		
+	}
 }

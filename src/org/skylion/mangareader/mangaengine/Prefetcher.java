@@ -18,7 +18,7 @@ import org.skylion.mangareader.util.Logger;
  * @author Skylion
  *
  */
-public class Prefetcher implements MangaEngine, Closeable{
+public class Prefetcher extends MangaEngine implements Closeable{
 
 	private MangaEngine mangaEngine;//Current MangaEngine
 	private BufferedImage[] pages;//Current Images

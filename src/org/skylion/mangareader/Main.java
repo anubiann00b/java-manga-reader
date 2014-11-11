@@ -2,25 +2,28 @@ package org.skylion.mangareader;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.io.IOException;
 import java.net.URL;
-
+import java.util.prefs.Preferences;
 import javax.swing.JFrame;
 import javax.swing.UIManager;
 import javax.swing.UIManager.LookAndFeelInfo;
-
+import javax.swing.UnsupportedLookAndFeelException;
 import org.skylion.mangareader.gui.MainGUI;
-
-
+import org.skylion.mangareader.util.Logger;
 
 public class Main {
+	
+	public static Preferences pref;
+	
 	public static void main(String[] args) {
+		pref = Preferences.userRoot().node("/org/skylion/mangareader");
 		try {
 			new URL("jar:file://dummy.jar!/").openConnection().setDefaultUseCaches(false);//Disable caching
-		}
-		catch(Exception ex){
+		} catch(IOException e){
 			//Will never happen
 		}
-		try{
+		try {
 			Color neptune = new Color(18,55,63);
 			//Loads the Nimbus look and feel
 			//Retrieval method is convulted, but stable.
@@ -33,8 +36,9 @@ public class Main {
 	                break;
 		        }
 		    }
-		}catch (Exception ex) {
-			ex.printStackTrace();
+		} catch (ClassNotFoundException | InstantiationException |
+				IllegalAccessException | UnsupportedLookAndFeelException e) {
+			Logger.log(e);
 		}
 		 MainGUI gui = new MainGUI();
 		 gui.setVisible(true);

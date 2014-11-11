@@ -59,10 +59,7 @@ import org.skylion.mangareader.util.StringUtil;
  *
  */
 public class MainGUI extends JFrame {
-
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = -6351329658980316434L;
 
 	private Container pane;//Place holder
@@ -81,7 +78,7 @@ public class MainGUI extends JFrame {
 	//private JToggleButton toolbarLock;
 	
 	/**
-	 * User commandline
+	 * User commandline.
 	 */
 	private JTextField mangaSelect;//MangaSelect
 	private AutoSuggestor autoSelect;//My Autosuggestion Decorator
